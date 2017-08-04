@@ -141,10 +141,7 @@ class Merge {
                             if (mergeTwo(aunderGroup, acopiedUnder, merged)){
                                 //将merged加入mergedGroup
                                 mergedGroup.add(merged);
-//                                System.out.println("underGroup: " + underGroup);
                                 //从underGroup中删除这两个合并过的数组
-//                                underGroup.remove(aunderGroup);
-//                                underGroup.remove(acopiedUnder);
                                 aunderGroup.clear();
                                 acopiedUnder.clear();
                                 break;

@@ -40,8 +40,10 @@ public class display {
 //                list1.setListData(num.Num().toArray());
 //                Assign ass = new Assign();
 //                list1.setListData(ass.AssignNum().toArray());
-                Merge mer = new Merge();
-                list1.setListData(mer.mergeGroup().toArray());
+//                Merge mer = new Merge();
+//                list1.setListData(mer.mergeGroup().toArray());
+                Room room = new Room();
+                list1.setListData(room.assignRoom().toArray());
                 textArea1.setText("Number Displayed!");
             }
         });
