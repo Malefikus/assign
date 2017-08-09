@@ -28,7 +28,7 @@ class Fileio {
     static ArrayList<ArrayList<Object>> output = Import();
 
     // grouping the students by teachers
-    private static Map<String, List<String>> Group(){
+    static Map<String, List<String>> Group(){
         Map<String, List<String>> groupMap = new HashMap<>();
         for (ArrayList<Object> anOutput : output) {
             String student = (String) anOutput.get(1);

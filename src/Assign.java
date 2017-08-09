@@ -443,11 +443,11 @@ class Assign {
             count1 = Count3(teachervect, 1) + Count4(teachervect, 1);
         }
 
-        int totalstu = 0;
-        for (ArrayList<Object> aTeachervect : teachervect) {
-            totalstu += (int) aTeachervect.get(1);
-        }
-        System.out.println(totalstu);
+//        int totalstu = 0;
+//        for (ArrayList<Object> aTeachervect : teachervect) {
+//            totalstu += (int) aTeachervect.get(1);
+//        }
+//        System.out.println(totalstu);
 
         return assignGroup;
     }

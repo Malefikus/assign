@@ -28,8 +28,10 @@ public class display {
         groupButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Fileio gro = new Fileio();
-                list1.setListData(gro.grouped.entrySet().toArray());
+//                Fileio gro = new Fileio();
+//                list1.setListData(gro.grouped.entrySet().toArray());
+                Mapping mapping = new Mapping();
+                list1.setListData(mapping.mapStu().toArray());
                 textArea1.setText("Grouped!");
             }
         });
@@ -40,10 +42,10 @@ public class display {
 //                list1.setListData(num.Num().toArray());
 //                Assign ass = new Assign();
 //                list1.setListData(ass.AssignNum().toArray());
-//                Merge mer = new Merge();
-//                list1.setListData(mer.mergeGroup().toArray());
-                Room room = new Room();
-                list1.setListData(room.assignRoom().toArray());
+                Merge mer = new Merge();
+                list1.setListData(mer.mergeGroup().toArray());
+//                Room room = new Room();
+//                list1.setListData(room.assignRoom().toArray());
                 textArea1.setText("Number Displayed!");
             }
         });

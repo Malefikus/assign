@@ -38,8 +38,9 @@ class Merge {
             boolean merge = false;
             for (ArrayList<Object> amerged : merged){
                 //如果教师名字重复，合并人数
-                if (agroupTwo.get(0)==amerged.get(0)){
-                    amerged.set(1, (int)amerged.get(1)+(int)agroupTwo.get(1));
+                if (agroupTwo.get(0).equals(amerged.get(0))){
+                    int stunum = (int)amerged.get(1)+(int)agroupTwo.get(1);
+                    amerged.set(1, stunum);
                     merge = true;
                     break;
                 }
@@ -74,17 +75,18 @@ class Merge {
         undergroup.remove(originalGroup);
         for (ArrayList<Object> aoriginalGroup : originalGroup){
             if ((int)aoriginalGroup.get(1)>0){
-                //新开一个全0数组
+                //新开一个全0数组。不能用addAll，因为这样会把originalGroup也改掉
                 ArrayList<ArrayList<Object>> splited = new ArrayList<>();
-                splited.addAll(originalGroup);
-                //将这一元素删去
-                splited.remove(aoriginalGroup);
-                //剩下的元素全设为0
-                for (ArrayList<Object> asplited : splited){
-                    asplited.set(1, 0);
+                for (ArrayList<Object> boriginalGroup : originalGroup){
+                    ArrayList<Object> asplited = new ArrayList<>();
+                    asplited.add(boriginalGroup.get(0));
+                    if (boriginalGroup.get(0).equals(aoriginalGroup.get(0))){
+                        asplited.add(aoriginalGroup.get(1));
+                    } else {
+                        asplited.add(0);
+                    }
+                    splited.add(asplited);
                 }
-                //将这一元素重新加上
-                splited.add(0, aoriginalGroup);
                 //将这一数组加入undergroup里
                 undergroup.add(splited);
             }
