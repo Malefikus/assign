@@ -81,6 +81,6 @@ class Fileio {
 
     // exporting the data to an excel file
     static void Export(){
-        ExcelUtil.writeExcel(output,"output.xls");
+        ExcelUtil.writeExcel(OutputFormat.outputFormat(),"output.xls");
     }
 }
